@@ -10,7 +10,7 @@
        default-lazy-init="false" default-autowire="byName">
     <bean id="greetingAdvice" class="com.masterspring.demo.aop.advice.GreetingBeforeAdvice"/>
     <bean id="greetingAfterAdvice" class="com.masterspring.demo.aop.advice.GreetingAfterAdvice"/>
-    <bean id ="greetingAround" class="com.masterspring.demo.aop.advice.GreetingInterceptor"/>
+    <bean id="greetingAround" class="com.masterspring.demo.aop.advice.GreetingInterceptor"/>
     <bean id="target" class="com.masterspring.demo.aop.advice.NaiveWaiter"/>
     <bean id="waiter" class="org.springframework.aop.framework.ProxyFactoryBean"
           p:proxyInterfaces="com.masterspring.demo.aop.advice.Waiter"
@@ -20,4 +20,11 @@
     <!--此属性表示采用cglib,proxyInterfaces属性此时无用-->
 
 
+    <bean id="pmonitor" class="com.masterspring.demo.aop.proxy.ControllablePerformanceMonitor"/>
+    <bean id="forumServiceTarget" class="com.masterspring.demo.aop.proxy.ForumServiceImpl"/>
+    <bean id="forumService" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interfaces="com.masterspring.demo.aop.proxy.Monitorable"
+          p:target-ref="forumServiceTarget"
+          p:interceptorNames="pmonitor"
+          p:proxyTargetClass="true"/>
 </beans>
