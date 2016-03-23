@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="log-path">D:\idea_workspace\masterspring\logs</Property>
+    </Properties>
+    <Appenders>
+        <Console name="console-log" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
+        </Console>
+        <!--root-->
+        <RollingFile name="rootAppender-log" fileName="${log-path}/root-demo-trace.log"
+                     filePattern="${log-path}/root-demo-trace-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="demo-trace-log" fileName="${log-path}/demo-trace.log"
+                     filePattern="${log-path}/demo-trace-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile name="travel-error-log" fileName="${log-path}/demo-error.log"
+                     filePattern="${log-path}/travel-error-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <!--sql-->
+        <RollingFile name="sql-error-log" fileName="${log-path}/sql-error.log"
+                     filePattern="${log-path}/sql-error-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+    <Loggers>
+        <Logger name="com.masterspring.demo" level="debug" additivity="false">
+            <appender-ref ref="demo-trace-log" level="warn"/>
+            <appender-ref ref="demo-error-log" level="error"/>
+            <appender-ref ref="console-log" level="debug"/>
+        </Logger>
+        <!--sql日志 -->
+        <Logger name="java.sql" additivity="false">
+            <appender-ref ref="sql-error-log" level="error"/>
+        </Logger>
+
+        <Root level="debug" additivity="false">
+            <AppenderRef ref="console-log"/>
+            <AppenderRef ref="rootAppender-log"/>
+        </Root>
+    </Loggers>
+</Configuration>
