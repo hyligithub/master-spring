@@ -25,7 +25,7 @@
 
     <context:annotation-config/>
     <context:component-scan base-package="com.masterspring.dao"/>
-    <context:component-scan base-package="com.masterspring.service"/>
+    <!--<context:component-scan base-package="com.masterspring"/>-->
 
     <import resource="classpath:spring/spring-config-datasource.xml"/>
     <import resource="classpath:spring/spring-config-service.xml"/>

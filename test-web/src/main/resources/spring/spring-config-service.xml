@@ -27,4 +27,28 @@
           p:target-ref="forumServiceTarget"
           p:interceptorNames="pmonitor"
           p:proxyTargetClass="true"/>
+
+    <!--静态方法切面-->
+    <bean id="waiterTarget" class="com.masterspring.demo.aop.advisor.Waiter"/>
+    <bean id="sellerTarget" class="com.masterspring.demo.aop.advisor.Seller"/>
+    <bean id="greetAdvisor" class="com.masterspring.demo.aop.advisor.GreetAdvisor"
+          p:advice-ref="greetingAdvice"/>
+    <bean id="parent" abstract="true"
+          class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interceptorNames="greetAdvisor"
+          p:proxyTargetClass="true"/>
+    <bean id="waiterProxy" parent="parent" p:target-ref="waiterTarget"/>
+    <bean id="sellerProxy" parent="parent" p:target-ref="sellerTarget"/>
+
+    <!--正则表达式切面-->
+    <bean id="regexAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor"
+          p:advice-ref="greetingAdvice">
+        <property name="patterns">
+            <list><value>.*greet.*</value></list>
+        </property>
+    </bean>
+    <bean id="regexWaiter" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interceptorNames="regexAdvisor"
+          p:target-ref="waiterTarget"
+          p:proxyTargetClass="true"/>
 </beans>

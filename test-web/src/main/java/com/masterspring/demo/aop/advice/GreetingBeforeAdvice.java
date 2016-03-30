@@ -11,7 +11,8 @@ import java.lang.reflect.Method;
 public class GreetingBeforeAdvice implements MethodBeforeAdvice {
     @Override
     public void before(Method method, Object[] objects, Object o) throws Throwable {
+        PrintUtil.print(o.getClass().getName() + "." + method.getName());
         String clientName = (String) objects[0];
-        PrintUtil.print("How are you:" + clientName);
+        PrintUtil.print("How are you:Mr." + clientName);
     }
 }
