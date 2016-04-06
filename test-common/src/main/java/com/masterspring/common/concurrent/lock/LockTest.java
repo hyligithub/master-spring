@@ -1,7 +1,6 @@
 package com.masterspring.common.concurrent.lock;
 
 import com.masterspring.common.PrintUtil;
-import org.apache.commons.io.TaggedIOException;
 import org.junit.Test;
 
 /**
