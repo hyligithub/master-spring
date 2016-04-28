@@ -28,7 +28,7 @@ public class ConcurrentStack1<E> {
         do {
             oldHead = head.get();
             newHead.next = oldHead;
-        } while (head.compareAndSet(oldHead, newHead));
+        } while (!head.compareAndSet(oldHead, newHead));
     }
 
     class Node<E> {
