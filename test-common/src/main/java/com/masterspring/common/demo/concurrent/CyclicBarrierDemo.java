@@ -3,8 +3,6 @@ package com.masterspring.common.demo.concurrent;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-import concurrent.CyclicBarrierDemo.Player;
-
 /**
  * @author lihy
  *分线程具体的执行过程受其他分线程的影响，必须每个分线程都执行完毕了，

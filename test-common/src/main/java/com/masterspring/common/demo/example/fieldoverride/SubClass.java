@@ -1,6 +1,5 @@
 package com.masterspring.common.demo.example.fieldoverride;
 
-import example.initialorder.Parent;
 
 /**
  * @author lihy

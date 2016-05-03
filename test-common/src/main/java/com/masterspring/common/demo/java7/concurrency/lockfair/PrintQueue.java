@@ -3,7 +3,7 @@ package com.masterspring.common.demo.java7.concurrency.lockfair;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class PrintQueue {
+public class PrintQueue extends com.masterspring.common.demo.java7.concurrency.lock.PrintQueue {
 	private Lock queueLock = new ReentrantLock(true);
 
 	public void printJob(Object document) {

@@ -1,11 +1,6 @@
 package com.masterspring.common.demo.timer;
 
-import reflection.MyClass;
-
-import java.beans.IntrospectionException;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 
 /**
  * Created by lihuiyan on 2016/3/11.
@@ -47,8 +42,8 @@ public class ThreadAndRunnableExample {
 
         ArrayList<String> arrayList = new ArrayList<String>();
 
-        public  void run() {
-            arrayList.add(Math.random()+"");
+        public void run() {
+            arrayList.add(Math.random() + "");
 //            arrayList.add(num--);
 //            threadLocal.set(num--);
             try {
@@ -57,7 +52,7 @@ public class ThreadAndRunnableExample {
                 e.printStackTrace();
             }
 //            System.out.println(threadLocal.get());
-            System.out.println(Thread.currentThread().getName()+":"+arrayList.toString());
+            System.out.println(Thread.currentThread().getName() + ":" + arrayList.toString());
         }
     }
 

@@ -1,38 +1,38 @@
 package com.masterspring.common.demo.thread;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import thread.Task.State;
 
 public class TaskQueue {
 
-	private List<Task> queue = new LinkedList<Task>();
+    private List<Task> queue = new LinkedList<Task>();
 
-	public synchronized void addTask(Task task) {
-		if (task != null) {
-			queue.add(task);
-		}
-	}
+    public synchronized void addTask(Task task) {
+        if (task != null) {
+            queue.add(task);
+        }
+    }
 
-	public synchronized void finishTask(Task task) {
-		if (task != null) {
-			task.setState(Task.State.FINISHED);
-			queue.remove(task);
-		}
-	}
-	
-	/**取得一项待执行的任务
-	 * @return
-	 */
-	public synchronized Task getTask() {
-		for(Task task:queue){
-			if(Task.State.NEW.equals(task.getState())){
-				task.setState(State.RUNNING);
-				return task;
-			}
-		}
+    public synchronized void finishTask(Task task) {
+        if (task != null) {
+            task.setState(Task.State.FINISHED);
+            queue.remove(task);
+        }
+    }
+
+    /**
+     * 取得一项待执行的任务
+     *
+     * @return
+     */
+    public synchronized Task getTask() {
+        for (Task task : queue) {
+            if (Task.State.NEW.equals(task.getState())) {
+                task.setState(Task.State.RUNNING);
+                return task;
+            }
+        }
 //		Iterator<Task> it = queue.iterator();
 //		Task task;
 //		while (it.hasNext()) {
@@ -44,6 +44,6 @@ public class TaskQueue {
 //				return task;
 //			}
 //		}
-		return null;
-	}
+        return null;
+    }
 }

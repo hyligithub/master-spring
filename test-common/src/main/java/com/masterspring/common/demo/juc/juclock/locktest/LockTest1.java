@@ -1,6 +1,5 @@
 package com.masterspring.common.demo.juc.juclock.locktest;
 
-import juc.producerconsumer.Depot;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

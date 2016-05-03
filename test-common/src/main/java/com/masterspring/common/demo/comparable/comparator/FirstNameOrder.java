@@ -3,7 +3,8 @@
  */
 package com.masterspring.common.demo.comparable.comparator;
 
-import comparable.Name;
+
+import com.masterspring.common.demo.comparable.Name;
 
 import java.util.Comparator;
 

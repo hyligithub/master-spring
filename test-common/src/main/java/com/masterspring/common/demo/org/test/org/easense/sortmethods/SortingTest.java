@@ -1,9 +1,10 @@
 package com.masterspring.common.demo.org.test.org.easense.sortmethods;
 
+import com.masterspring.common.demo.org.easense.sortmethods.SortType;
+
 import java.util.Arrays;
 import java.util.Random;
 
-import org.easense.sortmethods.SortType;
 
 public class SortingTest {
 

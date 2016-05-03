@@ -1,7 +1,7 @@
 package com.masterspring.common.demo.java7.concurrency.lockfair;
 
-import java7.concurrency.lock.Job;
-import java7.concurrency.lock.PrintQueue;
+
+import com.masterspring.common.demo.java7.concurrency.lock.Job;
 
 public class Main {
 
