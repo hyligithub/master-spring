@@ -14,7 +14,7 @@ public class AtomicReferenceTest {
         atomicReference.compareAndSet(person1, person2);
         Person person3 = (Person) atomicReference.get();
         System.out.println("p3 is = " + person3);
-        System.out.println("p3.equals(p1)=" + person3.equals(person2));
+        System.out.println("p3.equals(p1)=" + person3.equals(person1));
 
     }
 
@@ -27,9 +27,9 @@ class Person {
         this.id = id;
     }
 
-//    public boolean equals(Person person) {
-//        return person.id == this.id;
-//    }
+    public boolean equals(Person person) {
+        return person.id == this.id;
+    }
 
     public String toString() {
         return "id:" + id;
