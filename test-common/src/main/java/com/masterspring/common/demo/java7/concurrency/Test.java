@@ -21,7 +21,10 @@ public class Test {
 		new Test().printList(user);
 		
 	}
-
+	@org.junit.Test
+	public void test123(){
+		System.out.println(Integer.toHexString(67339));
+	}
 	private void execute(User user) {
 		List<UserInfo> list = new ArrayList<UserInfo>();
 		UserInfo u1 = new UserInfo("zhangsan", "1");

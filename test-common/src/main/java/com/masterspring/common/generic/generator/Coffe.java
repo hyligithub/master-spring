@@ -1,5 +1,7 @@
 package com.masterspring.common.generic.generator;
 
+import com.masterspring.common.PrintUtil;
+
 /**
  * Created by lihuiyan on 2016/3/17.
  */
@@ -14,5 +16,6 @@ public class Coffe {
     public static void main(String[] args){
         System.out.println((new Coffe()).toString());
         System.out.println((new Coffe()).toString());
+        PrintUtil.print(counter);
     }
 }

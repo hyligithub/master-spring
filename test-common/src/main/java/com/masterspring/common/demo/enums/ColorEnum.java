@@ -3,7 +3,7 @@ package com.masterspring.common.demo.enums;
 /**
  * Created by lihuiyan on 2015/11/25.
  */
-public enum ColorEnum {
+public enum ColorEnum{
     Red("RED"),
     Yellow("YELLOW"),
     Green("GREEN");
@@ -17,3 +17,4 @@ public enum ColorEnum {
         return color;
     }
 }
+
