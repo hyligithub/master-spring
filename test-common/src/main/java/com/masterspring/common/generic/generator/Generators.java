@@ -15,14 +15,14 @@ public class Generators {
     }
 
     public static <T> List<T> fill(List<T> list, Generator<T> gen, int n) {
-        {
-            for (int i = 0; i < n;
-                 i++) {
-                list.add(gen.next());
+            {
+                for (int i = 0; i < n;
+                     i++) {
+                    list.add(gen.next());
 
+                }
+                return list;
             }
-            return list;
-        }
     }
 
     public static <T> Set<T> fill(Set<T> set, Generator<T> gen, int n) {

@@ -1,7 +1,6 @@
 package com.masterspring.common.concurrent.latch;
 
 import com.masterspring.common.PrintUtil;
-import org.junit.Test;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -10,7 +9,6 @@ import java.util.concurrent.CountDownLatch;
  */
 public class CountDownLatchTest {
 
-    @Test
     public void testPerformance() throws InterruptedException {
         final int times = 10;
         final CountDownLatch startLatch = new CountDownLatch(1);
