@@ -1,7 +1,6 @@
 package com.masterspring.common.generic.demo.demo8;
 
 import com.masterspring.common.PrintUtil;
-import com.masterspring.common.demo.testcallback.InterfaceA;
 
 /**
  * Created by lihuiyan on 2016/7/12.

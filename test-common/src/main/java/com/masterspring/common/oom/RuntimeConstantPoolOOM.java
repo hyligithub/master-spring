@@ -1,5 +1,8 @@
 package com.masterspring.common.oom;
 
+import com.masterspring.common.PrintUtil;
+
+import java.awt.print.Printable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,16 +14,16 @@ public class RuntimeConstantPoolOOM {
 
 
     public static void main(String[] args) {
-//        List<String> list = new ArrayList<String>();
-//        int i = 0;
+        List<String> list = new ArrayList<String>();
+        int i = 0;
+
 //        while (true) {
 //            list.add(String.valueOf(i++).intern());
 //        }
 
-//        String str1 = new StringBuffer("�����").append("���").toString();
-//        System.out.println(str1.intern() == str1);
-
-        String str2 = new StringBuffer("ja").append("va").toString();
-        System.out.println(str2.intern() == str2);
+        String str1 = new StringBuffer("ja").append("va").toString();
+        String str2 = new StringBuffer("计算机").append("软件").toString();
+        PrintUtil.print(str1.intern() == str1);
+        PrintUtil.print(str2.intern() == str2);
     }
 }
