@@ -5,7 +5,6 @@ import com.masterspring.common.PrintUtil;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static javafx.scene.input.KeyCode.T;
 
 /**
  * Created by lihuiyan on 2016/6/6.

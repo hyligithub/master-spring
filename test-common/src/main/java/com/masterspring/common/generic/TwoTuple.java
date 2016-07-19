@@ -17,7 +17,7 @@ public class TwoTuple<A, B> {
     }
 
     public static  void main(String[] args){
-        TwoTuple<Integer,Integer> ss=new TwoTuple<>(1,2);
+        TwoTuple<Integer,Integer> ss=new TwoTuple<Integer, Integer>(1,2);
         System.out.println(ss);
     }
 }
