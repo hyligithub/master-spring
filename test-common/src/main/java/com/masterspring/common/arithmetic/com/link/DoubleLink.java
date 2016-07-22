@@ -2,15 +2,15 @@ package com.masterspring.common.arithmetic.com.link;
 
 /**
  * Created by lihuiyan on 2015/5/13.
- * ʵ��˫��ѭ������
+ * 双向链表
  */
 public class DoubleLink<T> {
 
-    private DNode<T> mHead;//��ͷ
-    private int count;//�ڵ����
+    private DNode<T> mHead;//队列头，实际是傀儡节点
+    private int count;//队列长度
 
     public DoubleLink() {
-        mHead = new DNode<T>(null, null, null);//��ͷ�ǿսڵ�
+        mHead = new DNode<T>(null, null, null);//初始化头节点
         mHead.pre = mHead.next = mHead;
         count = 0;
     }
@@ -27,12 +27,12 @@ public class DoubleLink<T> {
         }
     }
 
-    //���ؽڵ����
+    ///队列长度
     public int size() {
         return count;
     }
 
-    //�����б��Ƿ�Ϊ��
+    //判断是否为空
     public boolean isEmpty() {
         return count == 0;
     }
@@ -41,7 +41,7 @@ public class DoubleLink<T> {
         if (index < 0 || index >= count) {
             throw new IndexOutOfBoundsException();
         }
-        //�������
+        //正向查找
         if (index < count / 2) {
             DNode<T> dNode = mHead.next;
             for (int i = 0; i < index; i++) {
@@ -50,7 +50,7 @@ public class DoubleLink<T> {
             return dNode;
         }
 
-        //�������
+        //逆向查找
         DNode<T> rNode = mHead.pre;
         int rIndex = count - index - 1;
         for (int j = 0; j < rIndex; j++)
@@ -58,17 +58,17 @@ public class DoubleLink<T> {
         return rNode;
     }
 
-    //��ȡindex�ڵ�ֵ
+    //获得index位置的节点
     public T getValue(int index) {
         return this.getNode(index).value;
     }
 
-    //��ȡ��һ���ڵ�ֵ
+    //获得队列第一个节点
     public T getFirstValue() {
         return this.getValue(0);
     }
 
-    //���ڵ���뵽indexλ��֮ǰ
+    //插入节点
     public void insert(int index, T t) {
         if (index == 0) {
             DNode<T> dNode = new DNode<T>(t, mHead, mHead.next);
@@ -86,12 +86,12 @@ public class DoubleLink<T> {
         return;
     }
 
-    //�ڵ���뵽��һ���ڵ㴦
+    //插入首节点
     public void insertFirst(T t) {
         this.insert(0, t);
     }
 
-    //�ڵ�׷�ӵ������ĩβ
+    //队尾插入节点
     public void appendLast(T t) {
         DNode<T> node = new DNode<T>(t, mHead.pre, mHead);
         mHead.pre.next = node;
